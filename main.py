@@ -4,9 +4,10 @@ import cv2
 import torch
 import torchvision
 import numpy as np
+import PIL
 
 def load_xray(data_path):
-    img = cv2.imread(data_path)
+    img = PIL.Image.open(data_path)
     show_XRAY(img)
     if img.ndim==2:
         img = np.expand_dims(img,axis=0)
