@@ -1,6 +1,1 @@
 streamlit
-torchxrayvision==1.0.1
-skimage==0.19.1
-torch==1.13.1+cpu
-torchvision==0.14.1+cpu
-numpy==1.23.5
