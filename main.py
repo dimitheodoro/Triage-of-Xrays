@@ -33,10 +33,9 @@ code = st.text_input("Enter code")
 if code=='1234':
  st.title("Prediction of Chest X-RAYs")
  with st.beta_container():
- #   bio_image= cv2.imread('bioiatriki.png')
-   bio_image= cv2.imread('dimis.png')
-   dimis = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
-   st.image(dimis)
+   bio_image= cv2.imread('Bioiatriki.png')
+   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
+   st.image(bio_image)
  uploaded_file = st.file_uploader("Choose an XRAY image (not DICOM) ",type=['png', 'jpg','jpeg'])
  if uploaded_file is not None:
 	img = load_xray(uploaded_file)
