@@ -27,7 +27,7 @@ def findings(results,thresh):
     else:
         findings_list= [(key, value) for key, value in results.items() if value > thresh]
         for finding in findings_list:
-            st.write(finding)
+            st.write(finding[0],'has probability',finding[1])
         
 #         st.write ([(key, value) for key, value in results.items() if value > thresh])
     
