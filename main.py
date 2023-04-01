@@ -25,8 +25,10 @@ def findings(results,thresh):
     if  [(key, value) for key, value in results.items() if value > thresh]==[]:
         st.write('This XRAY is normal')
     else:
+        findings_dict= [(key, value) for key, value in results.items() if value > thresh]
+        st.write(findings_dict)
+        
 #         st.write ([(key, value) for key, value in results.items() if value > thresh])
-        st.write ([(key, value) for key, value in results.items() if value > thresh])
     
 def show_XRAY(image):
     image = np.squeeze(image)
