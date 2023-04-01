@@ -8,6 +8,7 @@ import numpy as np
 
 def load_xray(data_path):
     img = PIL.Image.open(data_path)
+    st.write(img.ndim)
     show_XRAY(img)
     if img.ndim==2:
         img = np.expand_dims(img,axis=0)
