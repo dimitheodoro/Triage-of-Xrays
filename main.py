@@ -7,8 +7,9 @@ import PIL
 import numpy as np
 
 def load_xray(data_path):
-    img = PIL.Image.open(data_path)
-    img = np.array(img)
+    image_loaded = PIL.Image.open(data_path)
+    image_loaded = image_loaded.resize((224, 224))
+    img = np.array(image_loaded)
     st.write(img.ndim)
     show_XRAY(img)
     if img.ndim==2:
