@@ -9,6 +9,7 @@ import PIL
 def load_xray(data_path):
     img = PIL.Image.open(data_path)
     show_XRAY(img)
+	st.write(img.ndim)
     if img.ndim==2:
         img = np.expand_dims(img,axis=0)
         img = xrv.datasets.normalize(img, 255) # convert 8-bit image to [-1024, 1024] range
