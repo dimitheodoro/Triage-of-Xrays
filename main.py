@@ -1,8 +1,7 @@
+import streamlit as st
 import torchxrayvision as xrv
 import skimage, torch, torchvision
 import numpy as np
-import streamlit as st
-
 
 def load_xray(data_path):
     img = skimage.io.imread(data_path)
@@ -26,7 +25,6 @@ def findings(results,thresh):
 def show_XRAY(image):
     image = np.squeeze(image)
 	st.image(image)
-
 
 code = st.text_input("Enter code")
 
