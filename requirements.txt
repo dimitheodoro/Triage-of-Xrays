@@ -4,3 +4,4 @@ numpy==1.23.5
 torch
 torchvision
 torchxrayvision==1.0.1
+Pillow
