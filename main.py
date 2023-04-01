@@ -31,20 +31,20 @@ def show_XRAY(image):
 code = st.text_input("Enter code")
 
 if code=='1234':
- st.title("Prediction of Chest X-RAYs")
- with st.beta_container():
-   bio_image= cv2.imread('Bioiatriki.png')
-   bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
-   st.image(bio_image)
- uploaded_file = st.file_uploader("Choose an XRAY image (not DICOM) ",type=['png', 'jpg','jpeg'])
- if uploaded_file is not None:
-	img = load_xray(uploaded_file)
-	transform = torchvision.transforms.Compose([xrv.datasets.XRayCenterCrop(),xrv.datasets.XRayResizer(224)])
-	img = transform(img)
-	img = torch.from_numpy(img)
-	# Load model and process image
-	model = xrv.models.DenseNet(weights="densenet121-res224-all")
-	outputs = model(img[None,...]) # or model.features(img[None,...]) 
-	# Print results
-	results = dict(zip(model.pathologies,outputs[0].detach().numpy()))
-	findings(results,0.6)
+    st.title("Prediction of Chest X-RAYs")
+    with st.beta_container():
+        bio_image= cv2.imread('Bioiatriki.png')
+        bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
+        st.image(bio_image)
+    uploaded_file = st.file_uploader("Choose an XRAY image (not DICOM) ",type=['png', 'jpg','jpeg'])
+    if uploaded_file is not None:
+        img = load_xray(uploaded_file)
+        transform = torchvision.transforms.Compose([xrv.datasets.XRayCenterCrop(),xrv.datasets.XRayResizer(224)])
+        img = transform(img)
+        img = torch.from_numpy(img)
+        # Load model and process image
+        model = xrv.models.DenseNet(weights="densenet121-res224-all")
+        outputs = model(img[None,...]) # or model.features(img[None,...]) 
+        # Print results
+        results = dict(zip(model.pathologies,outputs[0].detach().numpy()))
+        findings(results,0.6)
