@@ -10,7 +10,6 @@ def load_xray(data_path):
     image_loaded = PIL.Image.open(data_path)
     image_loaded = image_loaded.resize((224, 224))
     img = np.array(image_loaded)
-    st.write(img.ndim)
     show_XRAY(img)
     if img.ndim==2:
         img = np.expand_dims(img,axis=0)
@@ -26,6 +25,7 @@ def findings(results,thresh):
     if  [(key, value) for key, value in results.items() if value > thresh]==[]:
         st.write('This XRAY is normal')
     else:
+#         st.write ([(key, value) for key, value in results.items() if value > thresh])
         st.write ([(key, value) for key, value in results.items() if value > thresh])
     
 def show_XRAY(image):
