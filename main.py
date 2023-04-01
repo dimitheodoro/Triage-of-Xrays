@@ -25,8 +25,9 @@ def findings(results,thresh):
     if  [(key, value) for key, value in results.items() if value > thresh]==[]:
         st.write('This XRAY is normal')
     else:
-        findings_dict= [(key, value) for key, value in results.items() if value > thresh]
-        st.write(findings_dict)
+        findings_list= [(key, value) for key, value in results.items() if value > thresh]
+        for finding in findings_list:
+            st.write(finding)
         
 #         st.write ([(key, value) for key, value in results.items() if value > thresh])
     
