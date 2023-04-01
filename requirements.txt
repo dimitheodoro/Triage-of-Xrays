@@ -1,0 +1,6 @@
+streamlit
+torchxrayvision
+skimage
+torch
+torchvision
+numpy
