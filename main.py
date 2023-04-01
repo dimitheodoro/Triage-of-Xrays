@@ -25,9 +25,9 @@ def findings(results,thresh):
         st.write ([(key, value) for key, value in results.items() if value > thresh])
     
 def show_XRAY(image):
-    image = np.squeeze(image)
+	image = np.squeeze(image)
 	st.image(image)
-
+	
 code = st.text_input("Enter code")
 
 if code=='1234':
