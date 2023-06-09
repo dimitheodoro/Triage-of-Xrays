@@ -39,7 +39,7 @@ code = st.text_input("Enter code")
 
 if code=='1234':
     st.title("Triage of Chest X-RAYs")
-    with st.beta_container():
+    with st.container():
         bio_image= cv2.imread('Bioiatriki.png')
         bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
         st.image(bio_image)
