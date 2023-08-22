@@ -38,7 +38,13 @@ def show_XRAY(image):
 code = st.text_input("Enter code")
 
 st.title("Triage of Chest X-RAYs")
-code_image = 'ghc.PNG' if code == 'ghc' else 'Bioiatriki.png'
+
+code =''
+if code == 'ghc':
+    code_image = 'ghc.PNG'
+elif code == 'bio':
+    code_image = 'ghc.PNG'
+
 with st.container():
     bio_image = cv2.imread(code_image)
     bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
