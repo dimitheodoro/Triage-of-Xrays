@@ -37,7 +37,7 @@ def show_XRAY(image):
     
 code = st.text_input("Enter code")
 if code=='ekpa':
-    st.title("Αυτοματοποιημένη διάγνωση ακτινογραφιών με χρήση ΑΙ")
+    st.title("Triage of Chest X-RAYs jhjgj")
     with st.container():
         bio_image= cv2.imread('ekpa.PNG')
         bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
