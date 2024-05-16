@@ -36,10 +36,10 @@ def show_XRAY(image):
     st.image(image)
     
 code = st.text_input("Enter code")
-if code=='αλφα':
+if code=='galinos':
     # st.title("Triage of Chest X-RAYs")
     with st.container():
-        bio_image= cv2.imread('APROLIPSIS.jpg')
+        bio_image= cv2.imread('galinos.jpg')
         bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
         st.image(bio_image)
     uploaded_file = st.file_uploader("Choose an XRAY image (not DICOM) ",type=['png', 'jpg','jpeg'])
