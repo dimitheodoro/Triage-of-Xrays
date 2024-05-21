@@ -58,7 +58,7 @@ if code=='galinos':
 if code=='wings':
     st.title("Triage of Chest X-RAYs")
     with st.container():
-        bio_image= cv2.imread('wings.jpg')
+        bio_image= cv2.imread('wings.png')
         bio_image = cv2.cvtColor(bio_image, cv2.COLOR_BGR2RGB)
         st.image(bio_image)
     uploaded_file = st.file_uploader("Choose an XRAY image (not DICOM) ",type=['png', 'jpg','jpeg'])
