@@ -36,7 +36,7 @@ def show_XRAY(image):
     st.image(image)
     
 code = st.text_input("Enter code")
-if code=='epivlepsi:
+if code=='epivlepsi':
     # st.title("Triage of Chest X-RAYs")
     with st.container():
         bio_image= cv2.imread('epivlepsi.png')
